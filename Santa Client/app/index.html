@@ -1,22 +1,28 @@
 <!doctype html>
-<html>
+<html id="index">
 	<head>
 		<meta charset="utf-8">
 		<title>Secret Santa</title>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
 	</head>
 	<body>
-		<p>Welcome to the Secret Santa Website</p>
-		<p>Please Register</p>
-		<form id="login-form">
-			<label>Username:</label>
-			<input type='text' autocomplete="off" id='username'>
-			<br>
-			<label>Password:</label>
-			<input type="password" autocomplete="off" id='password'>
-			<br>
-			<input type="submit" value="Submit Form" onclick="submission();">
-		</form>
-
+		<p id="welcome">Welcome to the Secret Santa</p>
+		<div id="form">
+			<form id="login-form">
+				<p style='font-size: 30px'>Please Register</p>
+				<div id="info">
+					<label id="username">Username:</label>
+					<input type='text' autocomplete="off" id="username"
+					style='width:30%'>
+					<br>
+					<label id="password">Password:</label>
+					<input type="password" autocomplete="off" id='password'
+					style='width:30%'>
+					<br>
+					<input type="submit" value="Submit Form" onclick="submission();">
+				</div>
+			</form>
+		</div>
 	</body>
 	<script type='module' src"/index.js" charrset="utf=8"></script>
 </html>

@@ -1,0 +1,55 @@
+#index{
+  background: url("asset/index.png") no-repeat center fixed;
+  background-color: #03e2e9;
+  background-size: contain;
+  height: 100%;
+  max-width: 100%;
+}
+
+#event{
+  background: url("asset/event.png") no-repeat center fixed;
+  background-color: #7CC6E1;
+  background-size: cover;
+}
+
+#welcome{
+  font-size: 500%;
+  font-weight: bolder;
+  font-style: normal;
+  text-align: center;
+}
+
+#form{
+  position:absolute;
+  left:50%;
+  top: 50%;
+  transform: translate(-25%,-50%);
+}
+ #username{
+   margin-right: 5%;
+   margin-bottom: 2%;
+   font-size: 30px;
+ }
+ #password{
+   margin-right: 6%;
+   margin-bottom: 2%;
+   font-size: 30px;
+ }
+
+#eh3{
+  margin-left: 15%;
+}
+
+ #members{
+  font-size: 30px;
+  margin-left: 15%;
+  margin-top: 25%;
+ }
+
+ #drawButton{
+   margin-left: 15%;
+   height: 15%;
+   width:20%;
+   font-size: 32px;
+   margin-top: 3%;
+ }
