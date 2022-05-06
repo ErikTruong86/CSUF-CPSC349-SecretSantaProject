@@ -1,30 +1,32 @@
 
-// get the form information
-const form = document.getElementById('login-form')
-form.addEventListener('submit',registerUser)
+// import {Account} from '/object.js'
+// // Getting the information
+// document.getElementById('submit').addEventListener('click', function(event){
+//   console.log("Submit button was clicked....");
+//
+//   //Retrieve user inputs
+//   const user = document.getElementById('user').value
+//   const password = document.getElementById('pwd').value
+//
+//   //Prepare and send REST API request
+//   console.log('Sending Rest request to save object....');
+//   const xhr = new XMLHttpRequest()
+//   xhr.open('POST', 'http://localhost:3000/api/secretsanta')
+//   const stObj = new Object(user,pwd)
+//
+//   //JSON Encoding
+//   xhr.setRequestHeader('Content-Type', 'application/json')
+//   xhr.responseType = 'json'
+//   xhr.onreadystatechange = function() {
+//     if(this.readyState == 4 && this.status == 200) {
+//       console.log(this.response);
+//     }
+//   }
+//   const jsonStr = JSON.stringify(stObj)
+//   xhr.send(jsonStr)
+// })
 
-//Grabbing the information from the Registration form on the homepage
-async function registerUser(event){
-  //prevents the default behavior of form which is refreshing the page.
-  event.preventDefault()
-  const username = document.getElementById('username').value
-  const password = document.getElementById('password').value
-
-  // Send data as JSON
-  const result = await fetch('/api/secretsanta',{
-    method:'POST',
-    headers:{
-      'Content-Type': 'application/json'
-    }
-    body: JSON.stringify({
-      username,
-      password
-    })
-  }).then((res)=>res.json)
-  console.log(result);
-}
-
-function submission(){
-  document.getElementById('login-form').submit()
-  alert('Form has been submitted');
-}
+document.getElementById('submit').addEventListener('click',function(event){
+  console.log("submit clicked");
+  window.location.href = "http://localhost:4020/account.html"
+});
