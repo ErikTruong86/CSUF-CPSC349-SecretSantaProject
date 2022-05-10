@@ -1,15 +1,13 @@
 const express = require('express')
-const cors = require('cors')
+var cors = require('cors')
 const app = express()
 const mongo = require('mongodb')
-const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient;
 const url = 'mongodb://localhost:27017/';
 
 app.set('port', 3000)
 app.use(express.json())
 app.use(cors())
-app.use(bodyParser.json())
 
 //Create Account
 app.post('/api/secretsanta',function(req,res){
@@ -55,6 +53,52 @@ app.get('/api/secretsanta/:id', function(req, res){
       })
     }
   })
+})
+
+//Add Name of Event and Group Info
+app.post('/api/secretsanta',function(req,res){
+  console.log(req.body);
+  MongoClient.connect(url, function (err, conn){
+    if(err) console.log(err);
+    else {
+      const db = conn.db('santa')
+      const myObj = new Object();
+      myObj.eventName = req.body.eventName
+      myObj.drawName = req.body.matches
+      const coll = db.collection('group')
+      coll.insertOne(myObj, function(err, result){
+        if (err) console.log(err);
+        else {
+          conn.close()
+          res.type('application/json')
+          res.status(200)
+          res.json(result)
+        }
+      })
+    }
+  })
+})
+
+//Get Data from Group to show the pair of Santa and Receiver
+app.get('api/secretsanta',function(req,res){
+  if (Object.keys(req.query).length == 0) {
+    MongoClient.connect(url, function(err, conn) {
+      if (err) console.log(err);
+      else {
+        const db = conn.db('santa')
+        const coll = db.collection('group')
+        coll.find({}).toArray(function(err,result){
+          if(err) console.log(err);
+          else {
+            conn.close()
+            res.type('application/json')
+            res.status(200)
+            res.json(result)
+          }
+        })
+      }
+    })
+  }
 })
 
 app.listen(app.get('port'), function(){
