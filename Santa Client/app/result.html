@@ -1,17 +1,15 @@
 <!doctype html>
-<html>
+<html class = "result">
   <head>
     <meta charset="utf-8">
     <title>Secret Santa</title>
     <link rel="stylesheet" type="text/css" href="styles.css"/>
   </head>
   <body>
-    <p>Here Are The Results Of The Pairing:</p>
-    <button id='done'>Done</button>
+    <div class = "resultDiv">
+      <p class = "rp">Here Are The Results Of The Pairing:</p>
+      <button class = "done" id='done'>Done</button>
+    </div>
   </body>
   <script type='module' src="/result.js" charset="utf-8"></script>
 </html>
-
-<!-- this should loop the names from the draw name function.
-use something similar to this in the js file to get the info:
-document.getElementById("results").innerHTML = get(music, count); -->

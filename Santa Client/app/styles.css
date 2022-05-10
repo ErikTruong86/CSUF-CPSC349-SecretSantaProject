@@ -86,3 +86,29 @@
   height:15%;
   width:20%;
 }
+
+.ap {
+  font-size: 32px;
+}
+
+.result{
+  background: url("asset/result.png") no-repeat center/125% fixed;
+  background-color: #efa7a9;
+
+}
+
+.resultDiv{
+  font-size: 30px;
+  left:50%;
+  position:absolute;
+  top:15%;
+  transform: translate(-50%);
+}
+
+.done{
+  font-size: 20px;
+}
+
+.rp{
+  color:#5a5b16;
+}

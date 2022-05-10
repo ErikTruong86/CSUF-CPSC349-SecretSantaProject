@@ -15,8 +15,15 @@ document.getElementById('draw').addEventListener('click',function(event){
 
   //get names into an array
   const names = [m1,m2,m3,m4,m5,m6,m7,m8,m9,m10]
+
+  //check if the names are inside the array
+  console.log(names);
   //shuffle the names
   const draw = shuffle(names);
+
+  //check if the names are shuffled
+  console.log(draw);
+
   // map out the names so each person gets a gift and gives it
   const matches = draw.map((name,index) => {
     return {
@@ -24,6 +31,10 @@ document.getElementById('draw').addEventListener('click',function(event){
       receiver: draw[index+1] || draw[0]
     }
   });
+
+  //check if the names are paired up with each with no repeat
+  console.log(matches);
+
   const stObj = new Object(ename,matches);
 
   console.log("Sending Rest Request to save object");
@@ -38,6 +49,7 @@ document.getElementById('draw').addEventListener('click',function(event){
     }
   }
   const jsonStr = JSON.stringify(stObj)
+  //comment this lower part out to check if the names are matched and done
   window.location.href = 'http://localhost:4020/result.html'
 
 })
