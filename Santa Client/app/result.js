@@ -1,4 +1,5 @@
 
+//trying to getting the data of 1 object which shows the matched pair of names
 const xhr = new XMLHttpRequest()
 xhr.open('GET', 'http://localhost:3000/api/santa')
 xhr.responseType = 'json'
@@ -8,6 +9,7 @@ xhr.onreadystatechange = function() {
   }
 }
 
+//goes back to the account page
 document.getElementById('done').addEventListener('click',function(event){
   window.location.href = "http://localhost:4020/account.html"
 })

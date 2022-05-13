@@ -1,3 +1,4 @@
+/*Style for the index.html*/
 .index{
   background: url("asset/index.png") no-repeat center fixed;
   background-color: #03e2e9;
@@ -32,11 +33,12 @@
   margin-right: 6%;
  }
 
- .event{
-   background: url("asset/event.png") no-repeat center fixed;
-   background-color: #7CC6E1;
-   background-size: cover;
- }
+/*Style for the event.html*/
+.event{
+ background: url("asset/event.png") no-repeat center fixed;
+ background-color: #7CC6E1;
+ background-size: cover;
+}
 
 .etop{
   color:#c80829;
@@ -76,6 +78,7 @@
   width:20%;
 }
 
+/*Style for the account.html*/
 .account{
   background: url("asset/account.png") no-repeat center/125% fixed;
   background-color: #6a7ca2;
@@ -91,6 +94,7 @@
   font-size: 32px;
 }
 
+/*Style for the result.html*/
 .result{
   background: url("asset/result.png") no-repeat center/125% fixed;
   background-color: #efa7a9;

@@ -33,7 +33,7 @@ app.post('/api/secretsanta',function(req,res){
   })
 })
 
-//Get Account Data
+//Trying to Get the Account Data
 app.get('/api/secretsanta/:id', function(req, res){
   console.log(`${req.params.id}`);
   MongoClient.connect(url,function(err, conn){
@@ -79,7 +79,7 @@ app.post('/api/secretsanta',function(req,res){
   })
 })
 
-//Get Data from Group to show the pair of Santa and Receiver
+//Get Data from Group to Show the Pair of Santa and Receiver
 app.get('api/secretsanta',function(req,res){
   if (Object.keys(req.query).length == 0) {
     MongoClient.connect(url, function(err, conn) {

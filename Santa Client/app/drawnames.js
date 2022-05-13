@@ -1,4 +1,5 @@
 
+//function to shuffle all the names that are in the array and returning the array
 export function shuffle(names){
   for( let i = names.length-1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i+1));

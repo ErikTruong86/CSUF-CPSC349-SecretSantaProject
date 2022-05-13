@@ -1,6 +1,8 @@
+//enable using the function from drawnames.js
 import {shuffle} from "./drawnames.js"
 
 document.getElementById('draw').addEventListener('click',function(event){
+  //getting the values from the webpage
   const ename = document.getElementById('eventName').value
   const m1 = document.getElementById('mem1').value
   const m2 = document.getElementById('mem2').value
@@ -38,6 +40,7 @@ document.getElementById('draw').addEventListener('click',function(event){
   const stObj = new Object(ename,matches);
 
   console.log("Sending Rest Request to save object");
+  //trying to send the object into the database
   const xhr = new XMLHttpRequest()
   xhr.open('POST','http://localhost:3000/api/secretsanta')
   //JSOn Encoding
@@ -49,7 +52,9 @@ document.getElementById('draw').addEventListener('click',function(event){
     }
   }
   const jsonStr = JSON.stringify(stObj)
-  //comment this lower part out to check if the names are matched and done
+
+  //comment this lower part out to check if the names are matched by checking
+  // the console
   window.location.href = 'http://localhost:4020/result.html'
 
 })
